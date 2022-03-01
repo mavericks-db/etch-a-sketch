@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #c9cec9;
+}
+
+.site-title  {
+    display: block;
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: #1F2937;
+    color: #E5E7EB;
+    text-align: center;
+    padding: 20px;
+    min-height: 10vh;
+}
+
+a {
+    text-decoration: none;
+    color: #E5E7EB;
+}

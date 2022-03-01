@@ -15,7 +15,16 @@ body {
     font-size: 50px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    margin-bottom: 10px;
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
 }
 
 .footer {

@@ -1,12 +1,22 @@
 const container = document.getElementById('container');
+
+
+let setColor = "#000000";
+let colorPicker = document.getElementById('colorPicker');
+colorPicker.addEventListener('input', (event) => setColor = event.target.value);
+
+
+let setSize = 16;
+let sizeSlider = document.getElementById('sizeSlider');
+sizeSlider.addEventListener('input', (event) => setSize = event.target.value);
+
 container.style.display = 'grid';
-container.style.margin = '50px auto';
+container.style.zIndex = '10';
+container.style.margin = '40px auto';
 container.style.width = '30vw';
 container.style.height = '60vh';
 
-let size = 16;
-let gridSize = size ** 2;
-
+let gridSize = setSize ** 2;
 let grid;
 
 function gridDisplay() {
@@ -16,24 +26,21 @@ function gridDisplay() {
         grid.setAttribute('id', i);
         container.appendChild(grid);
 
-        grid.style.backgroundColor = "#c9cec9";
+        grid.style.backgroundColor = "#FFFFFF";
+        grid.style.border = 'solid';
         grid.style.borderWidth = '1px';
-        grid.style.borderStyle = 'solid';
-        grid.style.borderColor = "black";
-        container.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-        container.style.gridTemplateRows = `repeat(${size}, 1fr)`
-        console.log(grid, i);
+        grid.style.borderColor = 'black';
 
-        grid.addEventListener('click', changeBGColor);
-        grid.addEventListener('mouseover', stopBGColor);
+        container.style.gridTemplateColumns = `repeat(${setSize}, 1fr)`
+        container.style.gridTemplateRows = `repeat(${setSize}, 1fr)`
+
+        grid.addEventListener('mouseover', changeBGColor);
     }
 }
 
 gridDisplay();
 
 function changeBGColor(event) {
-    this.style.backgroundColor = "blue";
+    this.style.backgroundColor = setColor;
 }
-function stopBGColor(event) {
-    this.style.backgroundColor = "red";
-}
+

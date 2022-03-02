@@ -17,11 +17,9 @@ function randomMode() {
 }
 
 const defaultColor = "#000000";
-const defaultMode = "colorSpecify";
 const defaultGridSize = 16;
 
 let currentColor = defaultColor;
-let currentMode = defaultMode;
 let currentGridSize = defaultGridSize;
 
 let colorPicker = document.getElementById('colorPicker');
@@ -83,4 +81,10 @@ function clearGrid() {
 
 window.onload = () => {
     gridMaker();
+    randomColor.style.borderColor = '';
+    randomColor.style.backgroundColor = "lightgrey";
+    colorPicker.style.borderColor = 'red';
+    colorPicker.style.backgroundColor = "white";
+    mode = 'color';
+    currentColor = defaultColor;
 }

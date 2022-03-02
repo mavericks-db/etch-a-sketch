@@ -1,36 +1,36 @@
 const container = document.getElementById('container');
+const clearBtn = document.getElementById('clearBtn');
+
+clearBtn.addEventListener('click', e => clearGrid());
+
+const defaultColor = "#000000";
+const defaultGridSize = 16;
 
 
-let setColor = "#000000";
+let setColor = defaultColor;
 let colorPicker = document.getElementById('colorPicker');
-colorPicker.addEventListener('input', (event) => setColor = event.target.value);
+colorPicker.addEventListener('input', (event) => {
+    setColor = event.target.value;
+});
 
 
-let setSize = 16;
+let setSize = defaultGridSize;
 let sizeSlider = document.getElementById('sizeSlider');
-sizeSlider.addEventListener('input', (event) => setSize = event.target.value);
+let sizeDisplay = document.getElementById('sizeDisplay');
+sizeSlider.addEventListener('change', (event) => {
+    setSize = event.target.value;
+    sizeDisplay.innerHTML = `${setSize} x ${setSize} Grid`;
+    clearGrid();
+    gridDisplay();
+});
 
-container.style.display = 'grid';
-container.style.zIndex = '10';
-container.style.margin = '40px auto';
-container.style.width = '30vw';
-container.style.height = '60vh';
-
-let gridSize = setSize ** 2;
 let grid;
-
 function gridDisplay() {
-    for (let i = 1; i <= gridSize; i++) {
+    for (let i = 0; i < setSize * setSize; i++) {
         grid = document.createElement('div');
-        grid.setAttribute('class', 'squares');
-        grid.setAttribute('id', i);
         container.appendChild(grid);
 
         grid.style.backgroundColor = "#FFFFFF";
-        grid.style.border = 'solid';
-        grid.style.borderWidth = '1px';
-        grid.style.borderColor = 'black';
-
         container.style.gridTemplateColumns = `repeat(${setSize}, 1fr)`
         container.style.gridTemplateRows = `repeat(${setSize}, 1fr)`
 
@@ -38,9 +38,11 @@ function gridDisplay() {
     }
 }
 
-gridDisplay();
-
 function changeBGColor(event) {
     this.style.backgroundColor = setColor;
 }
 
+function clearGrid() {
+    let x = container.querySelectorAll('div')
+    x.forEach(x => x.style.backgroundColor = "#FFFFFF");
+    }

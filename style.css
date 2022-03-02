@@ -19,6 +19,14 @@ body {
     margin-bottom: 0px;
 }
 
+.container {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    margin: 40px auto;
+    z-index: 10;
+}
+
 .section {
     display: flex;
     justify-content: center;
@@ -32,7 +40,6 @@ body {
     color: #E5E7EB;
     text-align: center;
     padding: 20px;
-    min-height: 10vh;
 }
 
 a {

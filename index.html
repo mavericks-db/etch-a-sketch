@@ -16,12 +16,26 @@
     <hr>
     <div class="section">
         <div>
+            <input  id="clearBtn" type="button" value="Clear">
+        </div>
+        <div>
             <input type="color" id="colorPicker" value="#000000"> Color Picker
         </div>
         <br>
         <div>
-            <input type="range" id="sizeSlider" min="16" max="64" step="4">
-            <span>16 x 16</span>
+            <input type="range" id="sizeSlider" min="1" max="100" step="1" list="tickmarks">
+            <datalist id="tickmarks">
+                <option value="10"></option>
+                <option value="20"></option>
+                <option value="30"></option>
+                <option value="40"></option>
+                <option value="50"></option>
+                <option value="60"></option>
+                <option value="70"></option>
+                <option value="80"></option>
+                <option value="90"></option>
+            </datalist>
+            <span id="sizeDisplay">16 x 16 Grid</span>
         </div>
     </div>
     <div class="container" id="container"></div>    

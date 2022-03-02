@@ -25,6 +25,7 @@ body {
     height: 500px;
     margin: 40px auto;
     z-index: 10;
+    background-color: black;
 }
 
 .section {

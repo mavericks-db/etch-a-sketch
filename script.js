@@ -5,22 +5,15 @@ const colorSpecify = document.getElementById('colorSpecify');
 
 clearBtn.addEventListener('click', e => clearGrid());
 randomColor.addEventListener('click', e => randomMode());
-colorSpecify.addEventListener('click', e => colorMode());
 
 
 let mode = "";
 function randomMode() {
     randomColor.style.borderColor = 'red';
-    colorSpecify.style.borderColor = '';
+    randomColor.style.backgroundColor = 'white';
+    colorPicker.style.borderColor = '';
+    colorPicker.style.backgroundColor = "lightgrey";
     mode = 'random';
-    gridMaker();
-}
-
-function colorMode() {
-    randomColor.style.borderColor = '';
-    colorSpecify.style.borderColor = 'red';
-    mode = 'color';
-    gridMaker();
 }
 
 const defaultColor = "#000000";
@@ -33,6 +26,11 @@ let currentGridSize = defaultGridSize;
 
 let colorPicker = document.getElementById('colorPicker');
 colorPicker.addEventListener('change', (event) => {
+    randomColor.style.borderColor = '';
+    randomColor.style.backgroundColor = "lightgrey";
+    colorPicker.style.borderColor = 'red';
+    colorPicker.style.backgroundColor = "white";
+    mode = 'color';
     currentColor = event.target.value;
 });
 
@@ -74,4 +72,9 @@ function changeColor() {
 function clearGrid() {
     let x = container.querySelectorAll('div')
     x.forEach(x => x.style.backgroundColor = "#FFFFFF");
+}
+
+
+window.onload = () => {
+    gridMaker();
 }

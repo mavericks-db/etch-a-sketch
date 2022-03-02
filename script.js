@@ -42,22 +42,28 @@ sizeSlider.addEventListener('change', (event) => {
     gridMaker();
 });
 
+let mouseDown = false;
+document.body.onmousedown = () => (mouseDown = true);
+document.body.onmouseup = () => (mouseDown = false);
+
 let grid;
 function gridMaker() {
     clearGrid();
     for (let i = 0; i < currentGridSize * currentGridSize; i++) {
         grid = document.createElement('div');
         container.appendChild(grid);
-        
+
         grid.style.backgroundColor = "#FFFFFF";
         container.style.gridTemplateColumns = `repeat(${currentGridSize}, 1fr)`
         container.style.gridTemplateRows = `repeat(${currentGridSize}, 1fr)`
-        
+
         grid.addEventListener('mouseover', changeColor);
+        grid.addEventListener('mousedown', changeColor);
     }
 }
 
-function changeColor() {
+function changeColor(event) {
+    if (event.type === 'mouseover' && !mouseDown) return
     if (mode == 'color') {
         this.style.backgroundColor = currentColor;
     }
@@ -65,7 +71,7 @@ function changeColor() {
         let redRan = Math.floor(Math.random() * 255);
         let greenRan = Math.floor(Math.random() * 255);
         let blueRan = Math.floor(Math.random() * 255);
-        this.style.backgroundColor = `rgb(${redRan},${greenRan},${blueRan})`;   
+        this.style.backgroundColor = `rgb(${redRan},${greenRan},${blueRan})`;
     }
 }
 

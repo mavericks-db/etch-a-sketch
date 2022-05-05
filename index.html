@@ -2,51 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mavericks Balitaan">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-A-Sketch</title>
+  <link rel="stylesheet" href="./stylesheet/style.css">
+  <script src="./script.js" defer></script>
 </head>
 
 <body>
-    <div class="site-title">Etch-a-Sketch</div>
-    <hr>
-    <div class="section">
-        <div>
-            <input  id="clearBtn" type="button" value="Clear">
-        </div>
-        <div>
-            <input  id="randomColor" type="button" value="Random Color">
-        </div>
-        <div>
-            <input type="color" id="colorPicker" value="#000000"> Color Picker
-        </div>
-        
-        <br>
-        <div>
-            <input type="range" id="sizeSlider" min="1" max="100" step="1" list="tickmarks">
-            <datalist id="tickmarks">
-                <option value="10"></option>
-                <option value="20"></option>
-                <option value="30"></option>
-                <option value="40"></option>
-                <option value="50"></option>
-                <option value="60"></option>
-                <option value="70"></option>
-                <option value="80"></option>
-                <option value="90"></option>
-            </datalist>
-            <span id="sizeDisplay">50 x 50 Grid</span>
-        </div>
-    </div>
-    <div class="container" id="container"></div>    
-    <div class="footer">Copyright ©
-        <a href="https://github.com/mavericks-db">mavericks-db</a>
-        2022
-    </div>
+  <h1>Etch-A-Sketch</h1>
+  <div class="options">
+      <input id="clearBtn" type="button" value="Clear">
+      <input id="randomColor" type="button" value="Random Color">
+      <input type="color" id="colorPicker" value="#000000"> Color Picker
+      <input type="range" id="sizeSlider" min="1" max="100" step="1" list="tickmarks">
+      <datalist id="tickmarks">
+        <option value="10"></option>
+        <option value="20"></option>
+        <option value="30"></option>
+        <option value="40"></option>
+        <option value="50"></option>
+        <option value="60"></option>
+        <option value="70"></option>
+        <option value="80"></option>
+        <option value="90"></option>
+      </datalist>
+      <span id="sizeDisplay">50 x 50 Grid</span>
+  </div>
+  <div class="container" id="container"></div>
+  <footer class="footer">Copyright ©
+    <a href="https://github.com/mavericks-db">mavericks-db</a>
+    2022
+  </footer>
 </body>
 
 </html>

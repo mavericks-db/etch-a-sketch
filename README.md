@@ -19,7 +19,7 @@ Screenshots can be found in the repository.
 
 ## Live Demo 🔗
 
-Check the live demo [here](https://github.com/mavericks-db/etch-a-sketch/)👈
+Check the live demo [here](https://mavericks-db.github.io/etch-a-sketch/)👈
 
 ## Getting Started
 
